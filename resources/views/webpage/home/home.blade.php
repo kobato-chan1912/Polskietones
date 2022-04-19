@@ -186,26 +186,6 @@
                 </ul>
             </div>
         </div>
-
-        <div class="col-md-6">
-            <div class="box">
-                &nbsp; &nbsp;<a href="/los-mejores-tonos-de-llamada" title="Los mejores tonos de llamada">
-                    <h2 class="title"><i class="fa fa-music" aria-hidden="true"></i> Kategoria
-                    </h2>
-                </a>
-                <ul class="list_apps">
-
-
-                    @foreach($categories as $category)
-
-                        <li class="list-group-item">
-                            <a href="/{{$category->category_slug}}">{{$category->category_name}}</a>
-                        </li>
-
-                    @endforeach
-                </ul>
-            </div>
-        </div>
         <div class="col-md-6">
             <div class="box">
                 &nbsp; &nbsp;<a href="/najlepsze-dzwonki" title="Tonos de llamada populares">
@@ -253,13 +233,33 @@
                                 <span><i class="fa fa-download" aria-hidden="true"></i> {{$song->downloads}}</span>
                                 <span><i class="fa fa-file-audio-o" aria-hidden="true"></i> {{$song->size}}</span>
                             </div>
-{{--                            <div class="developer"></div>--}}
+                            {{--                            <div class="developer"></div>--}}
                         </li>
 
                     @endforeach
                 </ul>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="box">
+                &nbsp; &nbsp;<a href="/los-mejores-tonos-de-llamada" title="Los mejores tonos de llamada">
+                    <h2 class="title"><i class="fa fa-music" aria-hidden="true"></i> Kategoria
+                    </h2>
+                </a>
+                <ul class="list_apps">
+
+
+                    @foreach($categories as $category)
+
+                        <li class="list-group-item">
+                            <a href="/{{$category->category_slug}}">{{$category->category_name}}</a>
+                        </li>
+
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+
 
 
         <span
