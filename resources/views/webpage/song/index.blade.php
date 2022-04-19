@@ -182,7 +182,7 @@
                         <div style="clear:both;"></div>
                         <br>
                         <div class="post_info">
-                            <h3>{{$song->title}} MP3 gratis</h3>
+                            <h3>{{$song->title}} MP3 </h3>
                             <ul id="ringtoneInfo">
                                 <li>
                                     <label><i class="fa fa-eye" aria-hidden="true"></i> Wyświetlenia</label>
