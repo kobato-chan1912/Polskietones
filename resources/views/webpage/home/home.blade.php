@@ -242,10 +242,10 @@
         </div>
         <div class="col-md-6">
             <div class="box">
-                &nbsp; &nbsp;<a href="/los-mejores-tonos-de-llamada" title="Los mejores tonos de llamada">
+                &nbsp; &nbsp;
                     <h2 class="title"><i class="fa fa-music" aria-hidden="true"></i> Kategoria
                     </h2>
-                </a>
+
                 <ul class="list_apps">
 
 
