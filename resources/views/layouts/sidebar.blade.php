@@ -24,13 +24,19 @@
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title link-nav" href="/admin/songs"><i data-feather="music"></i><span>Nhạc</span></a>
                     </li>
+
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="book-open"></i><span>Bài viết</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="/admin/posts">Danh sách bài viết</a></li>
                             <li><a href="/admin/post-outside">Bài viết trang chủ</a></li>
                         </ul>
                     </li>
-
+                    @if(\Illuminate\Support\Facades\Auth::user()->root == 1)
+                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="/admin/users"><i data-feather="users"></i><span>Người dùng</span></a>
+                        </li>
+                    @endif
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/admin/header"><i data-feather="code"></i><span>Thẻ Head</span></a>
+                    </li>
                     <li class="sidebar-main-title">
                         <div>
                             <h6>Cài đặt ngẫu nhiên             </h6>

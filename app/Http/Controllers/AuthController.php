@@ -16,7 +16,7 @@ class AuthController extends Controller
     public function GetLogin(Request $request): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
         if (Auth::check()){
-            return redirect(url()->previous());
+            return redirect()->route("dashboard");
         }
         else {
             $request->session()->put("previous", url()->previous());

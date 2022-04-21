@@ -34,6 +34,15 @@ Route::prefix("/admin")->middleware("auth")->group(function () {
 
     Route::get('/', "HomeController@index")->name("dashboard");
 
+    Route::prefix("/")->middleware("isRoot")->group(function (){
+        Route::get("/users", "UserController@index")->name("usersIndex");
+        Route::post("/users", "UserController@create");
+        Route::delete("/users/{id}", "UserController@destroy");
+        Route::post("/users/{id}", "UserController@update");
+    });
+
+    Route::get("/header", "HeaderController@index");
+    Route::post("/header", "HeaderController@edit");
     /*
     |--------------------------------------------------------------------------
     | Categories Routes
