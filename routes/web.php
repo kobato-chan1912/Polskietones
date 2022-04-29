@@ -113,6 +113,7 @@ Route::prefix("/admin")->middleware("auth")->group(function () {
 
     Route::get("/api/random-song", "ApiController@randomSong")->name("random_song");
     Route::get("/api/random-cate", "ApiController@randomCategory")->name("random_category");
+    Route::post("/api/check-song", "ApiController@checkSong")->name("checkSong_API");
 
 });
 

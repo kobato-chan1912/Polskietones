@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Song;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -29,5 +30,19 @@ class ApiController extends Controller
             "status" => 200,
             "description" => $desCategory,
         ], 200);
+    }
+
+    public function checkSong(Request $request): \Illuminate\Http\JsonResponse
+    {
+        $song = $request->get("song_name");
+        $search_song = Song::where("title", $song)->first();
+        if ($search_song == null){
+            $status = 0;
+        } else {
+            $status = 1;
+        }
+
+        return response()->json(["status" => 100, "duplicate" => $status], 200);
+
     }
 }

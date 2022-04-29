@@ -84,7 +84,9 @@
         </script>
         <div class="col-md-9">
             <div class="box column-3">
-                &nbsp; &nbsp;<h1 class="title"><i class="fa fa-music" aria-hidden="true"></i> Najnowszy </h1>
+                <a href="/najnowsze-dzwonki">
+                    <h1 class="title"><i class="fa fa-music" aria-hidden="true"></i> Najnowszy </h1></a>
+
 
                 <ul class="list_apps">
 
@@ -134,8 +136,39 @@
 
                 </ul>
             </div>
+            <div class="wp-pagenavi box" role="navigation">
+                <span class="pages">Página @if(request()->has('page')) {{$page}} @else 1 @endif de {{$newestSongs->lastPage()}}</span>
+                @if($page == 1 || !isset($page))
+                    @if($newestSongs->lastPage()==1)
+
+                        <a class="page smaller current" title="Page 1" href="{{$url}}1">1</a>
+
+                    @else
+                        {{--                        In first page--}}
+
+                        <a class="page smaller current" title="Page 1" href="{{$url}}1">1</a>
+                        <a class="page smaller" title="Page 2" href="{{$url}}2">2</a>
+                        @if($newestSongs->lastPage() >= 3)
+                            <a class="page smaller" title="Page 3" href="{{$url}}3">3</a>
+                        @endif
+                        <a class="last" href="{{$url}}2">Next »</a>
+                    @endif
+                @elseif(($page!=1) && ($page!=$newestSongs->lastPage()))
+                    <a class="first" href="{{$url}}{{$page-1}}">« Back</a>
+                    <a class="page smaller" href="{{$url}}{{$page-1}}">{{$page-1}}</a>
+                    <a class="page smaller current"  href="{{$url}}{{$page}}">{{$page}}</a>
+                    <a class="page smaller" href="{{$url}}{{$page+1}}">{{$page+1}}</a>
+                    <a class="last" href="{{$url}}{{$page+1}}">Next »</a>
+
+                @else
+                    <a class="first" href="{{$url}}{{$page-1}}">« Back</a>
+                    <a class="page smaller" href="{{$url}}{{$page-1}}">{{$page-1}}</a>
+                    <a class="page smaller current" href="{{$url}}{{$page}}">{{$page}}</a>
+                @endif
+            </div>
             <div class="box column-3">
-                &nbsp; &nbsp;<h1 class="title"><i class="fa fa-music" aria-hidden="true"></i> Najlepsze Dzwonki </h1>
+                <a href="/najlepsze-dzwonki"><h1 class="title"><i class="fa fa-music" aria-hidden="true"></i> Najlepsze Dzwonki </h1>
+                </a>
 
                 <ul class="list_apps">
                     @php $populars = \App\Models\Song::orderBy("downloads", "desc")->where("display",1)->limit(10)->get(); @endphp

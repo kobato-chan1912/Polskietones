@@ -9,14 +9,24 @@ use Illuminate\Http\Request;
 class WebPageController extends Controller
 {
     //
+    public $page;
+    public $url;
+    public function __construct(Request $request)
+    {
+        $this->page = $request->get('page');
+        $this->url = "?page=";
+    }
+
     public function indexHome()
     {
+        $page = $this->page;
+        $url = $this->url;
         $post = file_get_contents(storage_path("app/public/post_outside.txt"));
-        $newestSongs = Song::orderBy("id", "desc")->where("display",1)->limit(10)->get();
+        $newestSongs = Song::orderBy("id", "desc")->where("display",1)->paginate(10);
         $categories = Category::where("display",1)->get();
         $hotSongs = Song::orderBy("downloads", "desc")->where("display",1)->limit(5)->get();
         return view ("webpage.home.home",
-            compact('post', 'newestSongs', 'categories', 'hotSongs'));
+            compact('post', 'newestSongs', 'categories', 'hotSongs', 'page', 'url'));
     }
 
     public function download(Request $request, $id)

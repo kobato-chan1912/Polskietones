@@ -194,26 +194,53 @@
             textSize = totalSizeKB + " KB";
         }
 
-        $("#title").val(name);
-        $("#size").val(textSize);
-        createSlug();
+        // check song name
 
-        // Auto Generate Title and Content
-        let urlReq = "{{env("APP_URL")}}" + "/api/random-song";
-        $.ajax(urlReq,   // request url
-            {
-                success: function (data, status, xhr) {// success callback function
-                        let meta_title = data.title;
-                        let meta_des = data.description;
-                        let category_name = $('select[name=category]').find(":selected").text();
-                        let fullNameSize = name + " (" + textSize + ")";
-                        let meta_title_text = meta_title.replace(/[$]/g, fullNameSize); // change /$/ => to name
-                        let meta_des_text = meta_des.replace(/[$]/g, fullNameSize); // change /#/ => to category
-                        meta_des_text = meta_des_text.replace(/[#]/g, category_name )
-                        $("#meta_title").val(meta_title_text)
-                        $("#meta_description").val(meta_des_text)
+        $.ajax({
+            type:'POST',
+            url:"{{route("checkSong_API")}}",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data:{
+                song_name: name
+            },
+            success:function(data){
+                if (data.duplicate == 0){
+                    $("#title").val(name);
+                    $("#size").val(textSize);
+                    createSlug();
+
+                    // Auto Generate Title and Content
+                    let urlReq = "{{env("APP_URL")}}" + "/api/random-song";
+                    $.ajax(urlReq,   // request url
+                        {
+                            success: function (data, status, xhr) {// success callback function
+                                let meta_title = data.title;
+                                let meta_des = data.description;
+                                let category_name = $('select[name=category]').find(":selected").text();
+                                let fullNameSize = name + " (" + textSize + ")";
+                                let meta_title_text = meta_title.replace(/[$]/g, fullNameSize); // change /$/ => to name
+                                let meta_des_text = meta_des.replace(/[$]/g, fullNameSize); // change /#/ => to category
+                                meta_des_text = meta_des_text.replace(/[#]/g, category_name )
+                                $("#meta_title").val(meta_title_text)
+                                $("#meta_description").val(meta_des_text)
+                            }
+                        });
+                } else {
+                    swal({
+                        icon: 'warning',
+                        title: 'Trùng bài!',
+                        text: 'Bài hát đã tồn tại trên hệ thống',
+
+                    })
                 }
-            });
+            }
+        });
+
+
+
+
 
     }
 
