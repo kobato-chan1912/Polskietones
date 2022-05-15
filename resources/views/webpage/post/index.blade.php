@@ -16,8 +16,8 @@
             @include("layouts.search_box")
             <br>
             <div style="clear:both;"></div>
-            <span
-                style="display:block; text-align:center;border-bottom:1px solid #ededed;margin-bottom:5px;">Advertisement</span>
+{{--            <span--}}
+{{--                style="display:block; text-align:center;border-bottom:1px solid #ededed;margin-bottom:5px;">Advertisement</span>--}}
 
             <!-- yo-h -->
             <div style="clear:both;"></div>
@@ -90,8 +90,8 @@
         </script>
 
 
-        <span
-            style="display:block; text-align:center;border-bottom:1px solid #ededed;margin-bottom:5px;">Advertisement</span>
+{{--        <span--}}
+{{--            style="display:block; text-align:center;border-bottom:1px solid #ededed;margin-bottom:5px;">Advertisement</span>--}}
 
         <!-- yo-s -->
         <br>
