@@ -31,6 +31,9 @@
     <meta property="og:title" content="{{$og_title}}">
     <meta property="og:description"
           content="{{$og_des}}">
+    <meta property="title" content="{{$og_title}}">
+    <meta property="description"
+          content="{{$og_des}}">
     <meta property="og:url" content="{{URL::current()}}">
 
 

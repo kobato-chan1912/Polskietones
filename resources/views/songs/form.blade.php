@@ -19,13 +19,13 @@
 <!-- page-wrapper Start-->
 <div class="page-wrapper" id="pageWrapper">
     <!-- Page Header Start-->
-@include("layouts.header")
-<!-- Page Header Ends                              -->
+    @include("layouts.header")
+    <!-- Page Header Ends                              -->
     <!-- Page Body Start-->
     <div class="page-body-wrapper horizontal-menu">
         <!-- Page Sidebar Start-->
-    @include("layouts.sidebar")
-    <!-- Page Sidebar Ends-->
+        @include("layouts.sidebar")
+        <!-- Page Sidebar Ends-->
         <div class="page-body">
             <div class="container-fluid">
                 <div class="page-header">
@@ -246,6 +246,32 @@
 
     document.getElementById("music").addEventListener("change", handleFiles, false);
 
+    // onchange select audio
+
+    let first_categoryName = "@php echo \App\Models\Category::first()->category_name @endphp"
+    // alert(first_categoryName)
+    $('#category').data('pre', $(this).find("option:selected").text());
+
+    $('#category').change(function(e){
+        var before_change = $(this).data('pre');//get the pre data
+        if (before_change === ""){
+            before_change = first_categoryName
+        }
+        // alert(before_change)
+        //Do your work here
+        $(this).data('pre', $(this).find("option:selected").text());//update the pre data
+        let current_data = $(this).data('pre');
+        // alert(current_data)
+
+        // find in description
+        let des = $("#meta_description").val();
+        let new_des = des.replace(new RegExp(before_change, "g"), current_data);
+        $("#meta_description").val(new_des)
+    })
+
+
+
+
 
 
     @if(isset($song))
@@ -254,6 +280,8 @@
     document.getElementById('src').src = "{{$song->url}}"
     document.getElementById("audio").load();
     @endif
+
+
 
 </script>
 
