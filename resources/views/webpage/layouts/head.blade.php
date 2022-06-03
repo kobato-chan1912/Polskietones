@@ -1,7 +1,16 @@
 <head>
     <title>{{$title}}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta property="og:locale" content="es">
+    <meta property="og:locale" content="fi">
+    <meta property="title" content="{{$og_title}}">
+    <meta property="description"
+          content="{{$og_des}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{$og_title}}">
+    <meta property="og:description"
+          content="{{$og_des}}">
+    <meta property="og:url" content="{{URL::current()}}">
+
     <link rel="icon" href="/webpage/favicons/fav.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/webpage/js/js-jqinit.js" async></script>
@@ -27,14 +36,6 @@
         } ] );
     </script>
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{$og_title}}">
-    <meta property="og:description"
-          content="{{$og_des}}">
-    <meta property="title" content="{{$og_title}}">
-    <meta property="description"
-          content="{{$og_des}}">
-    <meta property="og:url" content="{{URL::current()}}">
 
 
     <link rel="dns-prefetch" href="//s.w.org">
