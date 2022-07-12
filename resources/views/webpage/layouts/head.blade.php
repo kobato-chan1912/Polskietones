@@ -1,15 +1,18 @@
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/webpage/favicons/fav.ico">
     <title>{{ $title }}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta property="og:locale" content="fi">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
     <meta property="title" content="{{ $og_title }}">
     <meta property="description" content="{{ $og_des }}">
+    <meta name="description" content="{{ $og_des }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ $og_title }}">
     <meta property="og:description" content="{{ $og_des }}">
     <meta property="og:url" content="{{ URL::current() }}">
 
-    <link rel="icon" href="/webpage/favicons/fav.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/webpage/js/js-jqinit.js" async></script>
     <script>
@@ -121,11 +124,6 @@
     <noscript>
         <link rel="stylesheet" href="/webpage/css/wp-pagenavi-pagenavi-css.css">
     </noscript> --}}
-
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="revisit-after" content="1 days">
     @php
         $content = file_get_contents(storage_path('app/public/head.txt'));
         echo $content;
