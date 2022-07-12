@@ -29,10 +29,10 @@
 
     <link rel="dns-prefetch" href="//s.w.org">
     <link rel="stylesheet" href="https://use.typekit.net/nii3adk.css">
-    {{-- <link rel="stylesheet" id="wp-block-library-css" href="/webpage/css/block-library-style.min.css" type="text/css"
+    <link rel="stylesheet" id="wp-block-library-css" href="/webpage/css/block-library-style.min.css" type="text/css"
         >
     <link rel="stylesheet" id="wp-pagenavi-css" href="/webpage/css/wp-pagenavi-pagenavi-css.css" type="text/css"
-        > --}}
+        >
     <link rel="stylesheet" id="main-style-css" href="/webpage/css/main-style.css" type="text/css" >
     <link rel="stylesheet" id="bootstrap-css-css" href="/webpage/css/css-bootstrap.css" type="text/css" >
     <link rel="stylesheet" id="fontawesome-css-css" href="/webpage/css/css-font-awesome.min.css" type="text/css"
@@ -116,14 +116,14 @@
     {{-- css load blocking resources --}}
 
 
-    <link rel="preload" href="/webpage/css/block-library-style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    {{-- <link rel="preload" href="/webpage/css/block-library-style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="/webpage/css/block-library-style.min.css">
     </noscript>
     <link rel="preload" href="/webpage/css/wp-pagenavi-pagenavi-css.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="/webpage/css/wp-pagenavi-pagenavi-css.css">
-    </noscript>
+    </noscript> --}}
     @php
         $content = file_get_contents(storage_path('app/public/head.txt'));
         echo $content;
