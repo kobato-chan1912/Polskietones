@@ -71,7 +71,7 @@ class WebPageCategoryController extends Controller
             return view("webpage.post.index", ["post" => $post]);
         }
         else {
-            return redirect()->route('404Page');
+            return abort('404');
         }
     }
 

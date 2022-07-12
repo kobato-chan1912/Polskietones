@@ -161,4 +161,4 @@ Route::prefix("/")->group(function () {
 
 
 
-Route::fallback(function() { return redirect()->route('404Page'); });
+// Route::fallback(function() { return redirect()->route('404Page'); });
