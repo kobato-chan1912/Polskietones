@@ -132,7 +132,11 @@ Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderCon
 Route::prefix("/")->group(function () {
     Route::get("/", "WebPageController@indexHome")->name("webPageIndex");
 
-    Route::get("/pagination", "WebPageController@indexPagination");
+    Route::get("/page/{page}", function($page){
+        return redirect(env("WEBPAGE_URL"). "?page=". $page);
+    });
+
+    // Route::get("/pagination", "WebPageController@indexPagination");
 //   Route::get("/newest", "WebPageController@newest");
     Route::get("/najlepsze-dzwonki", "WebPageCategoryController@losMejores")->name("lost_mejores");
     Route::get("/najnowsze-dzwonki", "WebPageCategoryController@newestSongs")->name("newest");

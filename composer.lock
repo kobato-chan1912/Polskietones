@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebb91f3dfcad005db89f9de5445be52a",
+    "content-hash": "280a044fa4a6095c8d157838c55c58ee",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3495,6 +3495,77 @@
                 "source": "https://github.com/spatie/flysystem-dropbox/tree/1.2.3"
             },
             "time": "2020-11-28T22:17:09+00:00"
+        },
+        {
+            "name": "spatie/laravel-paginateroute",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-paginateroute.git",
+                "reference": "c6f8e97408e2c1603e0196cdce6efdbad3dcaf50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-paginateroute/zipball/c6f8e97408e2c1603e0196cdce6efdbad3dcaf50",
+                "reference": "c6f8e97408e2c1603e0196cdce6efdbad3dcaf50",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/contracts": "~5.4.0",
+                "illuminate/routing": "~5.4.0",
+                "illuminate/translation": "~5.4.0",
+                "orchestra/testbench": "^3.4",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Spatie\\PaginateRoute\\PaginateRouteServiceProvider"
+                    ],
+                    "aliases": {
+                        "PaginateRoute": "Spatie\\PaginateRoute\\PaginateRouteFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\PaginateRoute\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel outer extension to easily use laravel's paginator without the query string",
+            "homepage": "https://github.com/spatie/laravel-paginateroute",
+            "keywords": [
+                "laravel",
+                "laravel-paginateroute",
+                "pagination",
+                "routing",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-paginateroute/issues",
+                "source": "https://github.com/spatie/laravel-paginateroute/tree/master"
+            },
+            "abandoned": true,
+            "time": "2018-07-02T07:35:00+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -8549,5 +8620,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

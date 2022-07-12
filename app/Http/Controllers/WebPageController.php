@@ -16,21 +16,21 @@ class WebPageController extends Controller
         $this->page = $request->get('page');
         $this->url = "?page=";
     }
+    // public function indexHome()
+    // {
+    //     $page = $this->page;
+    //     $url = "/pagination?page=";
+    //     $post = file_get_contents(storage_path("app/public/post_outside.txt"));
+    //     $newestSongs = Song::orderBy("id", "desc")->where("display",1)->paginate(10);
+    //     $categories = Category::where("display",1)->get();
+    //     $hotSongs = Song::orderBy("downloads", "desc")->where("display",1)->limit(5)->get();
+    //     return view ("webpage.home.home",
+    //         compact('post', 'newestSongs', 'categories', 'hotSongs', 'page', 'url'));
+    // }
     public function indexHome()
     {
         $page = $this->page;
-        $url = "/pagination?page=";
-        $post = file_get_contents(storage_path("app/public/post_outside.txt"));
-        $newestSongs = Song::orderBy("id", "desc")->where("display",1)->paginate(10);
-        $categories = Category::where("display",1)->get();
-        $hotSongs = Song::orderBy("downloads", "desc")->where("display",1)->limit(5)->get();
-        return view ("webpage.home.home",
-            compact('post', 'newestSongs', 'categories', 'hotSongs', 'page', 'url'));
-    }
-    public function indexPagination()
-    {
-        $page = $this->page;
-        $url = $this->url;
+        $url = "/page/";
         $post = file_get_contents(storage_path("app/public/post_outside.txt"));
         $newestSongs = Song::orderBy("id", "desc")->where("display",1)->paginate(10);
         $categories = Category::where("display",1)->get();

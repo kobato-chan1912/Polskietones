@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{route("webPageIndex")}}" >
-                    <img src="/webpage/images/logo.png" alt="Logo Image Src">
+                    <img src="/webpage/images/logo.png" alt="Dzwonkitones Logo">
                 </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse" style="background-color: {{'#'.env("BACKGROUND_COLOR")}}">
