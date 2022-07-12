@@ -132,6 +132,12 @@ Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderCon
 Route::prefix("/")->group(function () {
     Route::get("/", "WebPageController@indexHome")->name("webPageIndex");
 
+    Route::get('404.html', function(){
+        abort('404');
+    })->name("404Page");
+
+    
+    
     Route::get("/page/{page}", function($page){
         return redirect(env("WEBPAGE_URL"). "?page=". $page);
     });
@@ -151,5 +157,8 @@ Route::prefix("/")->group(function () {
 
     Route::get("/download/{id}", "WebPageController@download");
     Route::get("/dl/download", "WebPageController@dlDownload")->name("dlDownload");
-
 });
+
+
+
+Route::fallback(function() { return redirect()->route('404Page'); });
