@@ -221,7 +221,8 @@
                                 <a href="/{{ $song->slug }}" class="app_name"
                                     title="">{{ $song->title }}</a>
                                 <div class="starsx">
-                                    <span><i class="fa fa-eye" aria-hidden="true"></i> {{ $song->listeners }}</span>
+                                    <span><i class="fa fa-eye" aria-hidden="true"></i>
+                                        {{ $song->listeners }}</span>
                                     <span><i class="fa fa-download" aria-hidden="true"></i>
                                         {{ $song->downloads }}</span>
                                     <span><i class="fa fa-file-audio-o" aria-hidden="true"></i>
@@ -278,7 +279,8 @@
                                 <a href="/{{ $song->slug }}" class="app_name"
                                     title="">{{ $song->title }}</a>
                                 <div class="starsx">
-                                    <span><i class="fa fa-eye" aria-hidden="true"></i> {{ $song->listeners }}</span>
+                                    <span><i class="fa fa-eye" aria-hidden="true"></i>
+                                        {{ $song->listeners }}</span>
                                     <span><i class="fa fa-download" aria-hidden="true"></i>
                                         {{ $song->downloads }}</span>
                                     <span><i class="fa fa-file-audio-o" aria-hidden="true"></i>
@@ -318,6 +320,9 @@
 
         </div>
     </section>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62cdbc0252235356"></script>
+
     @include('webpage.layouts.footer')
 
 </body>
