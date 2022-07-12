@@ -11,30 +11,27 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
+ */
 
 /*
 |--------------------------------------------------------------------------
 | Auth Routes for admin
 |--------------------------------------------------------------------------
-*/
+ */
 
-Route::prefix("/admin")->group(function (){
+Route::prefix("/admin")->group(function () {
     Route::get("/login", "AuthController@GetLogin")->name("login");
     Route::post("/login", "AuthController@Login");
     Route::get("/logout", "AuthController@logout")->name("logout");
 });
 
-
 // Dashboard Route //
 
 Route::prefix("/admin")->middleware("auth")->group(function () {
 
-
     Route::get('/', "HomeController@index")->name("dashboard");
 
-    Route::prefix("/")->middleware("isRoot")->group(function (){
+    Route::prefix("/")->middleware("isRoot")->group(function () {
         Route::get("/users", "UserController@index")->name("usersIndex");
         Route::post("/users", "UserController@create");
         Route::delete("/users/{id}", "UserController@destroy");
@@ -47,7 +44,7 @@ Route::prefix("/admin")->middleware("auth")->group(function () {
     |--------------------------------------------------------------------------
     | Categories Routes
     |--------------------------------------------------------------------------
-    */
+     */
 
     Route::get("/categories", "CategoryController@index")->name("categoriesIndex");
     Route::post("/categories", "CategoryController@create");
@@ -58,7 +55,7 @@ Route::prefix("/admin")->middleware("auth")->group(function () {
     |--------------------------------------------------------------------------
     | Randomization Routes
     |--------------------------------------------------------------------------
-    */
+     */
     Route::get("/random-songs-title", "RandomController@indexTitle");
     Route::post("/random-songs-title", "RandomController@editTitle");
     Route::get("/random-songs-description", "RandomController@indexDescription");
@@ -70,18 +67,17 @@ Route::prefix("/admin")->middleware("auth")->group(function () {
     |--------------------------------------------------------------------------
     | Outside Post Routes
     |--------------------------------------------------------------------------
-    */
+     */
 
     Route::get("/post-outside", "OutsideController@indexPost")->name("post_outside");
     Route::post("/post-outside", "OutsideController@editPost");
 //Route::get("/post-outside/preview", "OutsideController@previewPost")->name("post_outside_preview");
 
-
     /*
     |--------------------------------------------------------------------------
     | Posts Routes
     |--------------------------------------------------------------------------
-    */
+     */
 
     Route::get("/posts", "PostController@index")->name("postsIndex");
     Route::get("/posts/create", "PostController@indexCreate")->name("postsCreate");
@@ -94,7 +90,7 @@ Route::prefix("/admin")->middleware("auth")->group(function () {
     |--------------------------------------------------------------------------
     | Songs Routes
     |--------------------------------------------------------------------------
-    */
+     */
 
     Route::get("/songs", "SongController@index")->name("songsIndex");
     Route::get("/songs/create", "SongController@indexCreate")->name("songsCreate");
@@ -103,13 +99,11 @@ Route::prefix("/admin")->middleware("auth")->group(function () {
     Route::get("/songs/{id}", "SongController@indexEdit")->name("songsEdit");
     Route::post("/songs/{id}", "SongController@edit");
 
-
-
     /*
     |--------------------------------------------------------------------------
     | API Routes
     |--------------------------------------------------------------------------
-    */
+     */
 
     Route::get("/api/random-song", "ApiController@randomSong")->name("random_song");
     Route::get("/api/random-cate", "ApiController@randomCategory")->name("random_category");
@@ -118,10 +112,10 @@ Route::prefix("/admin")->middleware("auth")->group(function () {
 });
 
 /*
-    |--------------------------------------------------------------------------
-    | CKFinder Routes
-    |--------------------------------------------------------------------------
-    */
+|--------------------------------------------------------------------------
+| CKFinder Routes
+|--------------------------------------------------------------------------
+ */
 
 Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')
     ->name('ckfinder_connector')->middleware("auth");
@@ -129,24 +123,23 @@ Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderC
 Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderController@browserAction')
     ->name('ckfinder_browser')->middleware("auth");
 
-
 /*
-    |--------------------------------------------------------------------------
-    | Webpage Routes
-    |--------------------------------------------------------------------------
-*/
+|--------------------------------------------------------------------------
+| Webpage Routes
+|--------------------------------------------------------------------------
+ */
 
-Route::prefix("/")->group(function (){
-   Route::get("/", "WebPageController@indexHome")->name("webPageIndex");
+Route::prefix("/")->group(function () {
+    Route::get("/", "WebPageController@indexHome")->name("webPageIndex");
+
+    Route::get("/pagination", "WebPageController@indexPagination");
 //   Route::get("/newest", "WebPageController@newest");
-
     Route::get("/najlepsze-dzwonki", "WebPageCategoryController@losMejores")->name("lost_mejores");
-   Route::get("/najnowsze-dzwonki", "WebPageCategoryController@newestSongs")->name("newest");
-   Route::get("/popularny", "WebPageCategoryController@popularSongs")->name("popularSongs");
-   Route::get("{slug}", "WebPageCategoryController@categorySongs")->name("categoriesSongs");
+    Route::get("/najnowsze-dzwonki", "WebPageCategoryController@newestSongs")->name("newest");
+    Route::get("/popularny", "WebPageCategoryController@popularSongs")->name("popularSongs");
+    Route::get("{slug}", "WebPageCategoryController@categorySongs")->name("categoriesSongs");
 
-
-   // Search Routes
+    // Search Routes
 
     Route::get("/search/{search}", "WebPageCategoryController@search");
 

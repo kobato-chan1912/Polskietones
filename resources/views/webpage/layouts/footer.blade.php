@@ -45,16 +45,6 @@
         </div>
     </div>
 
-    <div class="footer-28-03-2022" style="display: none">
-        <h3> <a href="http://istanbulescortiletisim.com" target="_blank">istanbul escort</a> <a
-                href="http://istanbulescortnil.com" target="_blank">istanbul escort</a> <a
-                href="http://istanbulescortpartner.com" target="_blank">istanbul escort</a> <a
-                href="http://istanbulescorts.org" target="_blank">istanbul escort</a> <a
-                href="http://istanbulescortbayan.net" target="_blank">istanbul escort</a> <a
-                href="http://vipistanbulescorts.com" target="_blank">istanbul escort</a> <a
-                href="http://istanbulescortagency.com" target="_blank">istanbul escort</a> <a
-                href="http://istanbulescortbayan.com" target="_blank">istanbul escort</a> </h3>
-    </div>
     <script type="text/javascript" src="/webpage/js/js-wp-embed.min.js"></script>
     @include("webpage.layouts.jsloading")
 </section>
