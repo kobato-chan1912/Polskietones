@@ -30,18 +30,18 @@
     <link rel="dns-prefetch" href="//s.w.org">
     <link rel="stylesheet" href="https://use.typekit.net/nii3adk.css">
     <link rel="stylesheet" id="wp-block-library-css" href="/webpage/css/block-library-style.min.css" type="text/css"
-        media="all">
+        >
     <link rel="stylesheet" id="wp-pagenavi-css" href="/webpage/css/wp-pagenavi-pagenavi-css.css" type="text/css"
-        media="all">
-    <link rel="stylesheet" id="main-style-css" href="/webpage/css/main-style.css" type="text/css" media="all">
-    <link rel="stylesheet" id="bootstrap-css-css" href="/webpage/css/css-bootstrap.css" type="text/css" media="all">
+        >
+    <link rel="stylesheet" id="main-style-css" href="/webpage/css/main-style.css" type="text/css" >
+    <link rel="stylesheet" id="bootstrap-css-css" href="/webpage/css/css-bootstrap.css" type="text/css" >
     <link rel="stylesheet" id="fontawesome-css-css" href="/webpage/css/css-font-awesome.min.css" type="text/css"
-        media="all">
-    <link rel="stylesheet" id="style-css-css" href="/webpage/css/css-style.css" type="text/css" media="all">
+        >
+    <link rel="stylesheet" id="style-css-css" href="/webpage/css/css-style.css" type="text/css" >
     <link rel="stylesheet" id="circle-player-style-css" href="/webpage/css/circle.skin-circle.player.css"
-        type="text/css" media="all">
+        type="text/css" >
     <link rel="stylesheet" id="circle-monday-style-css" href="/webpage/css/css-jplayer.blue.monday.min.css"
-        type="text/css" media="all">
+        type="text/css" >
     <style type="text/css" id="wp-custom-css">
         .navbar-nav li a {
             color: #000 !important
