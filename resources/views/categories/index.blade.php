@@ -258,7 +258,7 @@
                 success: function (data, status, xhr) {// success callback function
                     let meta_des = data.description;
                     let currentTitle = $("#category_name").val();
-                    let meta_des_text = meta_des.replace("$", currentTitle);
+                    let meta_des_text = meta_des.replaceAll("$", currentTitle);
                     $("#category_meta_description").val(meta_des_text)
                 }
             });
@@ -268,7 +268,7 @@
                 success: function (data, status, xhr) {// success callback function
                     let meta_title = data.title;
                     let currentTitle = $("#category_name").val();
-                    let meta_title_text = meta_title.replace(/[$]/g, currentTitle);
+                    let meta_title_text = meta_title.replaceAll(/[$]/g, currentTitle);
                     $("#category_meta_title").val(meta_title_text)
                 }
             });
