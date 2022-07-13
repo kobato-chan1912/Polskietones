@@ -130,7 +130,7 @@ Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderCon
  */
 
 Route::prefix("/")->group(function () {
-    Route::get("/", "WebPageController@indexHome")->name("webPageIndex");
+    Route::get("/", "WebPageController@indexHome")->middleware('isMinify')->name("webPageIndex");
 
     Route::get('404.html', function(){
         abort('404');
