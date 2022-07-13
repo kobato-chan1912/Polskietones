@@ -220,9 +220,9 @@
                                 let meta_des = data.description;
                                 let category_name = $('select[name=category]').find(":selected").text();
                                 let fullNameSize = name + " (" + textSize + ")";
-                                let meta_title_text = meta_title.replace(/[$]/g, fullNameSize); // change /$/ => to name
-                                let meta_des_text = meta_des.replace(/[$]/g, fullNameSize); // change /#/ => to category
-                                meta_des_text = meta_des_text.replace(/[#]/g, category_name )
+                                let meta_title_text = meta_title.replaceAll(/[$]/g, fullNameSize); // change /$/ => to name
+                                let meta_des_text = meta_des.replaceAll(/[$]/g, fullNameSize); // change /#/ => to category
+                                meta_des_text = meta_des_text.replaceAll(/[#]/g, category_name )
                                 $("#meta_title").val(meta_title_text)
                                 $("#meta_description").val(meta_des_text)
                             }
@@ -265,7 +265,7 @@
 
         // find in description
         let des = $("#meta_description").val();
-        let new_des = des.replace(new RegExp(before_change, "g"), current_data);
+        let new_des = des.replaceAll(new RegExp(before_change, "g"), current_data);
         $("#meta_description").val(new_des)
     })
 
