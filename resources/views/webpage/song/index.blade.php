@@ -176,7 +176,7 @@
                                     crossorigin="anonymous"></script>
                                 <!-- Ads 2 - Vuông -->
                                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073" data-ad-slot="4412194511"
-                                    data-ad-format="auto" data-full-width-responsive="true" data-adtest="{{ env('ADSENSE_TEST') }}"></ins>
+                                    data-ad-format="auto" data-adtest="{{ env('ADSENSE_TEST') }}" data-full-width-responsive="true" data-adtest="{{ env('ADSENSE_TEST') }}"></ins>
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
