@@ -14,10 +14,7 @@
 <section class="body">
     <div class="banner">
         <div class="container">
-            <form action="/" method="GET" class="search_box">
-                <input name="s" type="text" placeholder="Buscar Tonos de llamada...">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+            @include("layouts.search_box")
         </div>
 
     </div>
@@ -218,7 +215,17 @@
                         <div class="title-download">
                             <h2>Pobierz {{$song->title}} dzwonków</h2>
                         </div>
-
+                        <div class="ads">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750925066811073"
+                                    crossorigin="anonymous"></script>
+                                <!-- Ads 1 - Below Search -->
+                                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073"
+                                    data-adtest="{{ env('ADSENSE_TEST') }}" data-ad-slot="9219752340" data-ad-format="auto"
+                                    data-full-width-responsive="true"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
 
                         <div class="popup">
                             <p class="title-report">Ściągnij</p>
@@ -251,6 +258,18 @@
                         <div class="download-err">
                             <span>Jeśli pobieranie nie rozpocznie się w ciągu kilku sekund,</span> <a href="{{route("dlDownload"). "?id=" .$song->id}}">kliknij tutaj!</a>
                         </div>
+
+                        <div class="ads" style="padding-top: 30px;">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750925066811073"
+                                    crossorigin="anonymous"></script>
+                                <!-- Ads 1 - Below Search -->
+                                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073"
+                                    data-adtest="{{ env('ADSENSE_TEST') }}" data-ad-slot="9219752340" data-ad-format="auto"
+                                    data-full-width-responsive="true"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
                     </div>
                 </div>
                 <div class="box column-3">

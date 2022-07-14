@@ -173,6 +173,19 @@
                             href="{{ $url }}{{ $page }}">{{ $page }}</a>
                     @endif
                 </div>
+                @if ($agent->isPhone())
+                    <div class="ads-mobile-only" style="padding-bottom: 30px;">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750925066811073"
+                            crossorigin="anonymous"></script>
+                        <!-- Ads 1 - Below Search -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073"
+                            data-adtest="{{ env('ADSENSE_TEST') }}" data-ad-slot="9219752340"
+                            data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                @endif
                 <div class="box column-3">
                     <a href="/najlepsze-dzwonki">
                         <h1 class="title"><i class="fa fa-music" aria-hidden="true"></i> Najlepsze Dzwonki </h1>
@@ -235,29 +248,32 @@
                     </ul>
                 </div>
 
-                <div class="ads-pc-only" style="height: 20px;">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750925066811073"
-                        crossorigin="anonymous"></script>
-                    <!-- Ads 1 - Below Search -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073"
-                        data-adtest="{{ env('ADSENSE_TEST') }}" data-ad-slot="9219752340" data-ad-format="auto"
-                        data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-                <div class="ads-pc-only" style="height: 20px; padding-top: 30px; padding-bottom: 30px;">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750925066811073"
-                        crossorigin="anonymous"></script>
-                    <!-- Ads 1 - Below Search -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073"
-                        data-ad-slot="9219752340" data-ad-format="auto" data-adtest="{{ env('ADSENSE_TEST') }}"
-                        data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+
+                @if ($agent->isDesktop())
+                    <div class="ads-pc-only" style="height: 20px;">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750925066811073"
+                            crossorigin="anonymous"></script>
+                        <!-- Ads 1 - Below Search -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073"
+                            data-adtest="{{ env('ADSENSE_TEST') }}" data-ad-slot="9219752340"
+                            data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="ads-pc-only" style="height: 20px; padding-top: 30px; padding-bottom: 30px;">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750925066811073"
+                            crossorigin="anonymous"></script>
+                        <!-- Ads 1 - Below Search -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073"
+                            data-ad-slot="9219752340" data-ad-format="auto"
+                            data-adtest="{{ env('ADSENSE_TEST') }}" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
             </div>
+            @endif
             <div class="col-md-6">
                 <div class="box">
                     &nbsp; &nbsp;<a href="/najlepsze-dzwonki" title="Tonos de llamada populares">
@@ -315,6 +331,19 @@
                     </ul>
                 </div>
             </div>
+            @if ($agent->isPhone())
+                <div class="ads-mobile-only" style="padding-bottom: 30px;">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750925066811073"
+                        crossorigin="anonymous"></script>
+                    <!-- Ads 1 - Below Search -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073"
+                        data-adtest="{{ env('ADSENSE_TEST') }}" data-ad-slot="9219752340" data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            @endif
             <div class="col-md-6">
                 <div class="box">
                     &nbsp; &nbsp;

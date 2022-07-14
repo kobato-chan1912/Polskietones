@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
+        App\Providers\AgentServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PaginateRoute' => 'Spatie\PaginateRoute\PaginateRouteFacade',
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ],
 
 ];

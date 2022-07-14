@@ -171,7 +171,15 @@
                                 <a id="btnModalx" href="/download/{{$song->id}}" class="btn_download" rel="nofollow" title="Download">Ściągnij<i class="fa fa-download"></i></a>
 
                             </div>
-                            <div class="text">
+                            <div class="ads">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5750925066811073"
+                                    crossorigin="anonymous"></script>
+                                <!-- Ads 2 - Vuông -->
+                                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5750925066811073" data-ad-slot="4412194511"
+                                    data-ad-format="auto" data-full-width-responsive="true" data-adtest="{{ env('ADSENSE_TEST') }}"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
                             </div>
                         </div>
                         <br>
