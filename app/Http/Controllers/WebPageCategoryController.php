@@ -51,7 +51,8 @@ class WebPageCategoryController extends Controller
 
             $songs = Song::where("category_id", $category->id)->where("display", 1)->paginate(10);
             $title = "Kolekcja Dzwonków " . $category->category_name;
-            return $this->loadView($songs, $title, $category->meta_title, $category->meta_description);
+            $metaDes = "Dzwonki Na Telefon $category->category_name – Dzwonkitones";
+            return $this->loadView($songs, $title, $category->meta_title, $metaDes);
 
             // return view
         } elseif ($song!= null){ // has Song
