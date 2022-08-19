@@ -29,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         // PaginateRoute::registerMacros();
         // parent::boot();
-    
+        $xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=".getRealIpAddr());
+        $country = $xml->geoplugin_countryName;
+        if ($country == "China" || $country == "Hongkong" || $country == "Taiwan"){
+           abort("500");
+        }
     }
 }

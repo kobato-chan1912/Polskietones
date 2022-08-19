@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
         App\Providers\AgentServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
 
     ],
 
