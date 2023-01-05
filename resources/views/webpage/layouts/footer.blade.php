@@ -37,7 +37,7 @@
         </div>
     </div>
     @if ($agent->isPhone())
-        
+
     @endif
     <div class="about">
         <div class="container">
@@ -45,7 +45,7 @@
             {{-- Derechos de autor 2022 <a href="/">Tonosmp3gratis.com</a> --}}
             {{-- </div> --}}
             <div class="copyright">
-                <p>Copyright © 2022 by <a href="/">{{ env('WEB_NAME') }}</a></p>
+                <p>Copyright © <script>document.write(new Date().getFullYear())</script> by <a href="/">{{ env('WEB_NAME') }}</a></p>
             </div>
 
 
