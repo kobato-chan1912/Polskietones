@@ -33,7 +33,7 @@
                     <div id="container-cfq">
                         <div class="page-description summary">
                             <h1 class="gt-title page-title"><i class="fa fa-bullhorn" aria-hidden="true">
-                                    Dzwonki na telefon 2022 | Pobierz najlepsze dźwięki telefonów za darmo dla Polaków
+                                    Dzwonki na telefon <script>document.write(new Date().getFullYear())</script> | Pobierz najlepsze dźwięki telefonów za darmo dla Polaków
                                 </i></h1>
                             <div class="entry-content">
                                 @php echo $post @endphp
