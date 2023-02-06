@@ -2,9 +2,9 @@
 <html lang="es">
 
 @include('webpage.layouts.head', [
-    'title' => 'Dzwonki Na Telefon 2022 - Najnowsze Pobierz dzwonki MP3',
+    'title' => 'Dzwonki Na Telefon '.\Carbon\Carbon::now()->year.' - Najnowsze Pobierz dzwonki MP3',
     'og_des' =>
-        'Pobierz Darmowe Dzwonki na Telefon 2022. Syntetyzuj najnowsze dźwięki, dzwonki mp3 na telefony komórkowe w Dzwonkitones.com',
+        'Pobierz darmowe dzwonki 2023. Syntezuj dźwięki, najnowsze dzwonki mp3 na telefony za darmo na Dzwonkitones.com',
     'og_title' => 'DeDzwonki na telefon 2022 | Pobierz Dzwonek na Telefon darmowe - ' . env('WEB_NAME'),
 ])
 
